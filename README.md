@@ -1,8 +1,10 @@
-## EzLeague
+# EzLeague
 
 ![alt text](https://github.com/ArthurSaurel/EzLeague/blob/master/ressources/newmain.png)
 
-#Se simplifier League of Legends.
+*Se simplifier [League of Legends](https://euw.leagueoflegends.com/fr/).*
+
+[Télécharger l'installeur](https://github.com/ArthurSaurel/EzLeague/releases/tag/EzSetup)
 
 Ce logiciel a pour objectif d'automatiser certaines tâches et permettre de se concentrer sur les éléments qui vous intéressent vraiment. 
 
@@ -14,7 +16,12 @@ Pour rassurer ceux qui sont inquiets de se faire ban, je les invite à lire [cet
 
 Et pour avoir plus de détails techniques sur le programme ou des suggestions, je suis dispo sur discord ArthurFU#2380.
 
+Détail des fonctionnalités disponibles. 
 
+- #### EzProc
+######    *Accepte la partie pour vous après un délai défini dans les options.*
+
+- EzRunes
 
 
 
