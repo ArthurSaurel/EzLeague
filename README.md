@@ -43,7 +43,7 @@ Lorsqu'un champion est sélectionné ou échangé, cela déclenche un traitement
 ### &#x1F539; CTRL + Click Gauche sur l'icone
 Maintenir la touche **CONTROLE** relancera aussi le traitement mais avec la subtilité de forcer l'ouverture la fenêtre de choix de role. Cela est utile lorsqu'on souhaite avoir les runes associées à un role différent de celui qui nous est attibué par le jeu en mode draft.
 
-### &#x1F539; &#x1F539; Double-Click Gauche sur l'icone
+### &#x1F539; Double-Click Gauche sur l'icone
 Permet simplement de lancer le client du jeu. (Quand il ne l'est pas déjà..)
 
 ### &#x1F539; Pause
