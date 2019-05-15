@@ -12,7 +12,7 @@ Je voulais quelque chose de simple mais d'efficace, c'est pourquoi j'ai opté ve
 
 ![alt text](https://github.com/ArthurSaurel/EzLeague/blob/master/img/ezleague_menu.PNG)
 
-Pour rassurer ceux qui sont inquiets de se faire ban, je les invite à lire [cet article](https://developer.riotgames.com/league-client-apis.html) par Riot qui traite de la technologie utilisée pour EzLeague. __Spoiler : tu crains rien__
+Pour rassurer ceux qui sont inquiets de se faire ban, je les invite à lire [cet article](https://developer.riotgames.com/league-client-apis.html) par Riot qui traite de la technologie utilisée pour EzLeague. 
 
 Ci-dessous le détail des fonctionnalités disponibles. 
 
@@ -56,6 +56,8 @@ Permettent de paramétrer plus en profondeur les fonctionnalités ci-dessus. Je 
 Voilà pour la présentation de ce petit programme.
 
 Pour avoir plus de détails techniques, partager des suggestions ou des retours, je suis toujours dispo sur discord ArthurFU#2380.
+
+Arthur
 
 
 
