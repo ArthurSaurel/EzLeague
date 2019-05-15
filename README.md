@@ -6,9 +6,9 @@
 
 [Télécharger l'installeur](https://github.com/ArthurSaurel/EzLeague/releases/tag/EzSetup)
 
-Ce logiciel a pour objectif d'automatiser certaines tâches et permettre de se concentrer sur les éléments qui vous intéressent vraiment. 
+Ce logiciel a pour objectif d'automatiser certaines tâches et permettre de se concentrer sur les éléments qui nous intéressent vraiment. 
 
-Je voulais quelque chose de simple mais d'efficace, c'est pourquoi j'ai opté vers un icone en barre des tâches permettant de sélectionner rapidement les options que l'on veut activer.
+Je voulais quelque chose de simple mais d'efficace, c'est pourquoi j'ai opté pour un icone en barre des tâches permettant de sélectionner rapidement les options que l'on veut activer ou non.
 
 ![alt text](https://github.com/ArthurSaurel/EzLeague/blob/master/img/ezleague_menu.PNG)
 
@@ -20,10 +20,10 @@ Ci-dessous le détail des fonctionnalités disponibles.
 Accepte la partie pour vous après un délai défini dans les options.
 
 ### EzRunes
-Récupère et crée la page de runes de votre personnage la plus populaire sur [League of Graphs](https://www.leagueofgraphs.com/fr/)
+Crée la page de runes pour votre personnage en récupérant la plus populaire sur [League of Graphs](https://www.leagueofgraphs.com/fr/)
 
 ### EzSpells 
-Dans le même esprit que EzRunes mais pour les sorts d'invocateurs de votre role. (Pour remplacer le Flash par l'Ignite avec Shaco par exemple)
+Dans le même esprit que EzRunes mais pour les sorts d'invocateurs de votre role. 
 
 ### EzGuide
 Affiche une notification qui en cliquant dessus redige vers un guide sur le champion en cours.
@@ -38,23 +38,23 @@ Après le chargement de la partie, écrit **/mute all** dans le chat du jeu. Je 
 Permet de tester rapidement votre ping avec le serveur **EUW**.
 
 ### Click Gauche sur l'icone
-Lorsqu'un champion est sélectionné ou échangé, cela déclenche un traitement qui effectuera les tâches parmis **EzRunes**, **EzSpells** et **EzGuide** qui sont cochées. Cliquer sur l'icone relance alors ce traitement. (Par exemple pour rafraichir les runes ou afficher de nouveau la fenêtre du guide). 
+Lorsqu'un champion est sélectionné ou échangé, cela déclenche un traitement qui effectuera les tâches cochées parmis **EzRunes**, **EzSpells** et **EzGuide**. Cliquer sur l'icone relance alors ce traitement. (Par exemple pour rafraichir les runes ou afficher de nouveau la fenêtre du guide). 
 
 ### CTRL + Click Gauche sur l'icone
-Maintenir la touche **CONTROLE** relancera aussi le traitement mais avec la subtilité d'ouvrir la fenêtre de choix de role. Cela est utile lorsqu'on souhaite avoir les runes associées à un role différent de celui qui nous est attibué par le jeu en mode draft.
+Maintenir la touche **CONTROLE** relancera aussi le traitement mais avec la subtilité de forcer l'ouverture la fenêtre de choix de role. Cela est utile lorsqu'on souhaite avoir les runes associées à un role différent de celui qui nous est attibué par le jeu en mode draft.
 
 ### Double-Click Gauche sur l'icone
-Permet simplement de lancer le client du jeu. 
+Permet simplement de lancer le client du jeu. (Quand il ne l'est pas déjà..)
 
 ### Pause
 Met en pause la connexion entre EzLeague et le client du jeu. Aucune fonctionnalité à part EzPing ne fonctionnera.
 
 ### Options
-Permettent de paramétrer plus en profondeur les fonctionnalités ci-dessus. Je ne vais pas les détailler ici.
+Permettent de paramétrer plus en profondeur les fonctionnalités ci-dessus. Je vous laisse les découvrir.
 
 ----
 
-Voilà pour la présentation de ce petit programme.
+Voilà pour la présentation de EzLeague.
 
 Pour avoir plus de détails techniques, partager des suggestions ou des retours, je suis toujours dispo sur discord ArthurFU#2380.
 
