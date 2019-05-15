@@ -12,7 +12,7 @@ Je voulais quelque chose de simple mais d'efficace, c'est pourquoi j'ai opté ve
 
 ![alt text](https://github.com/ArthurSaurel/EzLeague/blob/master/img/ezleague_menu.PNG)
 
-Pour rassurer ceux qui sont inquiets de se faire ban, je les invite à lire [cet article](https://developer.riotgames.com/league-client-apis.html) par Riot qui traite de la technologie utilisée pour EzLeague. *Spoiler : tu crains rien*
+Pour rassurer ceux qui sont inquiets de se faire ban, je les invite à lire [cet article](https://developer.riotgames.com/league-client-apis.html) par Riot qui traite de la technologie utilisée pour EzLeague. __Spoiler : tu crains rien__
 
 Ci-dessous le détail des fonctionnalités disponibles. 
 
