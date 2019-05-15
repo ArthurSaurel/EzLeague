@@ -26,10 +26,10 @@ Crée la page de runes pour votre personnage en récupérant la plus populaire s
 Dans le même esprit que EzRunes mais pour les sorts d'invocateurs de votre role. 
 
 ### EzGuide
-Affiche une notification qui en cliquant dessus redige vers un guide sur le champion en cours.
+Affiche une notification qui, en cliquant dessus, redige vers un guide sur le champion en cours.
 
 ### EzLobby
-Au lancement de la partie, affiche une notification qui cette fois-ci redirige vers [Porofessor.gg](https://porofessor.gg/) pour avoir les informations des joueurs de la partie.
+Au lancement de la partie, affiche une notification qui, cette fois-ci, redirige vers [Porofessor.gg](https://porofessor.gg/) pour avoir les informations des joueurs de la partie.
 
 ### EzMuteAll  *[beta]*
 Après le chargement de la partie, écrit **/mute all** dans le chat du jeu. Je note cette fonctionnalité comme en "beta" car elle est toujours en cours de test.
