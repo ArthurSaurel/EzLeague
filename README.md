@@ -41,7 +41,7 @@ Permet de tester rapidement votre ping avec le serveur **EUW**.
 Lorsqu'un champion est sélectionné ou échangé, cela déclenche un traitement qui effectuera les tâches cochées parmis **EzRunes**, **EzSpells** et **EzGuide**. Cliquer sur l'icone relance alors ce traitement. (Par exemple pour rafraichir les runes ou afficher de nouveau la fenêtre du guide). 
 
 ### CTRL + Click Gauche sur l'icone
-Maintenir la touche **CONTROLE** relancera aussi le traitement mais avec la subtilité de forcer l'ouverture la fenêtre de choix de role. Cela est utile lorsqu'on souhaite avoir les runes associées à un role différent de celui qui nous est attibué par le jeu en mode draft.
+Maintenir la touche **CONTROLE** relancera aussi le traitement mais avec la subtilité de forcer l'ouverture de la fenêtre de choix de role. Cela est utile lorsqu'on souhaite avoir les runes associées à un role différent de celui qui nous est attibué par le jeu en mode draft.
 
 ### Double-Click Gauche sur l'icone
 Permet simplement de lancer le client du jeu. (Quand il ne l'est pas déjà..)
