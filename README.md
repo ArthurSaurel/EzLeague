@@ -57,7 +57,8 @@ Voilà pour la présentation de ce petit programme.
 
 Pour avoir plus de détails techniques, partager des suggestions ou des retours, je suis toujours dispo sur discord ArthurFU#2380.
 
-Arthur
+
+Bon jeu !
 
 
 
