@@ -12,9 +12,7 @@ Je voulais quelque chose de simple mais d'efficace, c'est pourquoi j'ai opté ve
 
 ![alt text](https://github.com/ArthurSaurel/EzLeague/blob/master/img/ezleague_menu.PNG)
 
-Pour rassurer ceux qui sont inquiets de se faire ban, je les invite à lire [cet article](https://developer.riotgames.com/league-client-apis.html) par Riot qui traite de la technologie utilisée pour EzLeague.
-
-Et pour avoir plus de détails techniques sur le programme, des suggestions ou des retours, je suis dispo sur discord ArthurFU#2380.
+Pour rassurer ceux qui sont inquiets de se faire ban, je les invite à lire [cet article](https://developer.riotgames.com/league-client-apis.html) par Riot qui traite de la technologie utilisée pour EzLeague. *Spoiler : tu crains rien*
 
 Ci-dessous le détail des fonctionnalités disponibles. 
 
@@ -34,7 +32,7 @@ Affiche une notification qui en cliquant dessus redige vers un guide sur le cham
 Au lancement de la partie, affiche une notification qui cette fois-ci redirige vers [Porofessor.gg](https://porofessor.gg/) pour avoir les informations des joueurs de la partie.
 
 ### EzMuteAll  *[beta]*
-Après le chargement de la partie, écrit /mute all dans le chat du jeu. Je note cette fonctionnalités comme en "beta" car elle est toujours en cours de test.
+Après le chargement de la partie, écrit **/mute all** dans le chat du jeu. Je note cette fonctionnalité comme en "beta" car elle est toujours en cours de test.
 
 ### EzPing
 Permet de tester rapidement votre ping avec le serveur **EUW**.
@@ -42,9 +40,22 @@ Permet de tester rapidement votre ping avec le serveur **EUW**.
 ### Click Gauche sur l'icone
 Lorsqu'un champion est sélectionné ou échangé, cela déclenche un traitement qui effectuera les tâches parmis **EzRunes**, **EzSpells** et **EzGuide** qui sont cochées. Cliquer sur l'icone relance alors ce traitement. (Par exemple pour rafraichir les runes ou afficher de nouveau la fenêtre du guide). 
 
-### CTRL + Click Gauche l'icone
+### CTRL + Click Gauche sur l'icone
 Maintenir la touche **CONTROLE** relancera aussi le traitement mais avec la subtilité d'ouvrir la fenêtre de choix de role. Cela est utile lorsqu'on souhaite avoir les runes associées à un role différent de celui qui nous est attibué par le jeu en mode draft.
 
+### Double-Click Gauche sur l'icone
+Permet simplement de lancer le client du jeu. 
+
+### Pause
+Met en pause la connexion entre EzLeague et le client du jeu. Aucune fonctionnalité à part EzPing ne fonctionnera.
+
+### Options
+Permettent de paramétrer plus en profondeur les fonctionnalités ci-dessus. Je ne vais pas les détailler ici.
+
+
+Voilà pour la présentation de ce petit programme.
+
+Pour avoir plus de détails techniques, partager des suggestions ou des retours, je suis toujours dispo sur discord ArthurFU#2380.
 
 
 
