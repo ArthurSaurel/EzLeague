@@ -52,6 +52,7 @@ Met en pause la connexion entre EzLeague et le client du jeu. Aucune fonctionnal
 ### Options
 Permettent de paramétrer plus en profondeur les fonctionnalités ci-dessus. Je ne vais pas les détailler ici.
 
+----
 
 Voilà pour la présentation de ce petit programme.
 
