@@ -8,7 +8,7 @@
 
 Ce logiciel a pour objectif d'automatiser certaines tâches et permettre de se concentrer sur les éléments qui nous intéressent vraiment. 
 
-Je voulais quelque chose de simple mais d'efficace, c'est pourquoi j'ai opté pour un icone en barre des tâches permettant de sélectionner rapidement les options que l'on veut activer ou non.
+Je voulais quelque chose de simple mais d'efficace, c'est pourquoi j'ai opté pour une icône en barre des tâches permettant de sélectionner rapidement les options que l'on veut activer ou non.
 
 ![alt text](https://github.com/ArthurSaurel/EzLeague/blob/master/img/ezleague_menu.PNG)
 
@@ -26,7 +26,7 @@ Crée la page de runes pour votre personnage en récupérant la plus populaire s
 Dans le même esprit que EzRunes mais pour les sorts d'invocateurs de votre role. 
 
 ### EzGuide
-Affiche une notification qui, en cliquant dessus, redige vers un guide sur le champion en cours.
+Affiche une notification qui, en cliquant dessus, redirige vers un guide sur le champion en cours.
 
 ### EzLobby
 Au lancement de la partie, affiche une notification qui, cette fois-ci, redirige vers [Porofessor.gg](https://porofessor.gg/) pour avoir les informations des joueurs de la partie.
@@ -38,10 +38,10 @@ Après le chargement de la partie, écrit **/mute all** dans le chat du jeu. Je 
 Permet de tester rapidement votre ping avec le serveur **EUW**.
 
 ### Click Gauche sur l'icone
-Lorsqu'un champion est sélectionné ou échangé, cela déclenche un traitement qui effectuera les tâches cochées parmis **EzRunes**, **EzSpells** et **EzGuide**. Cliquer sur l'icone relance alors ce traitement. (Par exemple pour rafraichir les runes ou afficher de nouveau la fenêtre du guide). 
+Lorsqu'un champion est sélectionné ou échangé, cela déclenche un traitement qui effectuera les tâches cochées parmis **EzRunes**, **EzSpells** et **EzGuide**. Cliquer sur l'icone relance alors ce traitement. (Par exemple pour rafraîchir les runes ou afficher de nouveau la fenêtre du guide). 
 
 ### CTRL + Click Gauche sur l'icone
-Maintenir la touche **CONTROLE** relancera aussi le traitement mais avec la subtilité de forcer l'ouverture de la fenêtre de choix de role. Cela est utile lorsqu'on souhaite avoir les runes associées à un role différent de celui qui nous est attibué par le jeu en mode draft.
+Maintenir la touche **CONTROLE** relancera aussi le traitement mais avec la subtilité de forcer l'ouverture de la fenêtre de choix de rôle. Cela est utile lorsqu'on souhaite avoir les runes associées à un rôle différent de celui qui nous est attibué par le jeu en mode draft.
 
 ### Double-Click Gauche sur l'icone
 Permet simplement de lancer le client du jeu. (Quand il ne l'est pas déjà..)
