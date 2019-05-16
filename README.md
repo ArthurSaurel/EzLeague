@@ -32,7 +32,7 @@ Affiche une notification qui, en cliquant dessus, redirige vers un guide sur le 
 Au lancement de la partie, affiche une notification qui, cette fois-ci, redirige vers [Porofessor.gg](https://porofessor.gg/) pour avoir les informations des joueurs de la partie.
 
 ### EzMuteAll  *[beta]*
-Après le chargement de la partie, écrit **/mute all** dans le chat du jeu. Je note cette fonctionnalité comme en "beta" car elle est toujours en cours de test.
+Après le chargement de la partie, écrit **/mute all** dans le chat du jeu. Je note cette fonctionnalité comme en "beta" car elle est toujours en cours de test. Cette fonctionnalité est la raison pour laquelle EzLeague demande les droits administrateurs, autrement le jeu n'accepte pas les touches envoyées. 
 
 ### EzPing
 Permet de tester rapidement votre ping avec le serveur **EUW**.
