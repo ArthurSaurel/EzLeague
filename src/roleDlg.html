@@ -11,7 +11,10 @@
     .filler {
         outline: 3px solid #c8aa6e;
     }
-    @-webkit-keyframes blink { 50% { border-color: #614A25; }  }
+    @-webkit-keyframes blink { 
+        from { opacity: 1.0; }
+        to { opacity: 0.0; }
+    }
     .main {
         background : rgb(255, 255, 255);
         box-sizing: border-box;

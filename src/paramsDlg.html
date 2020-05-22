@@ -150,7 +150,7 @@
 <body>
     <table>
         <tr>
-            <td width="75%">
+            <td width="100%">
                 <fieldset class="field_set">
                     <legend>  Position / Role  </legend>
                     <input type="radio" name="role" id="dlg">  Afficher fenêtre de sélection <br>
@@ -159,15 +159,21 @@
                     <input type="radio" name="role" id="none">  Aucuns
                 </fieldset>
             </td>
-            <td width="25%">
+            <td>
                 <fieldset class="field_set">
                     <legend>  Flash  </legend>
                     <div id="flashShortcut" class="flashContainer" onclick="DorF()">D</div>
                 </fieldset>
             </td>
         </tr>        
-    </table>       
-<fieldset class="field_set_">
+    </table> 
+    <fieldset class="field_set_">
+        <legend> Préchargement des runes (redémarrage requis)</legend>                    
+        <input type="radio" name="preload" id="mainrole">  Pour les roles principaux <br>
+        <input type="radio" name="preload" id="allroles">  Pour tous les roles <br>
+        <input type="radio" name="preload" id="norole">  Aucuns
+    </fieldset>      
+    <fieldset class="field_set_">
         <legend> Temps </legend>                    
         <div id="guideTps"></div> <input id="guideRange" type="range" class="rangeField" min="1" max="120" step="1" onchange="updateTime(this.id, this.value)"> 
         <br>                    
@@ -178,16 +184,18 @@
         <div id="procTps"></div> <input id="procRange" type="range" class="rangeField"  min="0" max="9" step="1" onchange="updateTime(this.id, this.value)">
     </fieldset>
     <fieldset class="field_set_">
-        <legend> LeagueClient.exe (Nécessite un redémarrage)</legend>                    
+        <legend> LeagueClient.exe (redémarrage requis)</legend>                    
         <input id="clientDir" type="text" value="C:/Riot Games/League of Legends/LeagueClient.exe"> 
         <button type="button" onclick="srchclientDir()">Rechercher</button>
     </fieldset>
     <input type="checkbox" name="role" id="autolaunch">  Lancer au démarrage de Windows
     <br>
     <input type="checkbox" name="role" id="saveLogs">  Sauvegarder les logs
+    <br>
+    <br>
     <div class="buttonParent">
         <button type="button" class="button" id="valid-btn" >VALIDER</button>  
         <button type="button" class="button" id="annul-btn" >ANNULER</button> 
-    </div>
+    </div>    
 </body>
 <script type="text/javascript" src="paramsDlg.js" ></script>

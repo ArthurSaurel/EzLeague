@@ -1,7 +1,8 @@
 const cheerio = require('cheerio');
 const request = require('request');
 const { upperFirst } = require('lodash');
-
+const main = require('./index.js');
+const config = require('./config');
 const url = 'http://www.leagueofgraphs.com/champions/';
 
 function extractSpellFromElement(el){    
@@ -48,16 +49,15 @@ function extractRunesFromElement($, champion, position){
 
         let subStyleOpacite = [];
 
-        const selectedPerkIds =             
+        var selectedPerkIds =             
             $(runePageElement)
-            .find(".img-align-block div img[style*='opacity:']")           
+            .find(".img-align-block div img[style*='opacity:']")            
             .filter(function(i, el) {
                 // this === el                
 
-                //Pas beau mais fonctionnel
-                
+                //Pas beau mais fonctionnel                
                 let runesLine = $(this).parent()
-                
+               
                 while (runesLine.get(0).tagName !== 'tr' ) {
                     runesLine = runesLine.parent()
                 }
@@ -65,9 +65,9 @@ function extractRunesFromElement($, champion, position){
                 runesLine = runesLine.find(".img-align-block div img[style*='opacity:']");
 
                 //Pour chaque line de rune on cherche le maximum d'opacité
-                max_opa = parseFloat($(runesLine[0]).attr('style').split(':').pop())
-                max_src = $(runesLine[0]).attr("src")
-                
+                max_opa = parseFloat($(runesLine[0]).attr('style').split(':').pop());
+                max_src = $(runesLine[0]).attr("src");
+
                 for (let j = 1; j < runesLine.length; j++) {
                     let tmp_opa = parseFloat($(runesLine[j]).attr('style').split(':').pop())
                     if (tmp_opa > max_opa) {
@@ -84,11 +84,19 @@ function extractRunesFromElement($, champion, position){
             .map(getPerkIdFromImg)
             .get()
 
-            //On cherche le moins plus opaque du 2eme arbres           
+        //On cherche le moins plus opaque du 2eme arbres           
+        let indexOfMaxValue = subStyleOpacite.slice(4, 7).reduce((iMax, x, i, arr) => x < arr[iMax] ? i : iMax, 0)
+        
+        selectedPerkIds.splice(indexOfMaxValue + 4, 1);
+        
+        const selectedPerksBis =             
+            $(runePageElement)
+            .find(".small-vert-padding div div[style=''] img")
+            .map(getPerkIdFromImg)
+            .get()
 
-            let indexOfMaxValue = subStyleOpacite.slice(4, 7).reduce((iMax, x, i, arr) => x < arr[iMax] ? i : iMax, 0)
-            
-            selectedPerkIds.splice(indexOfMaxValue + 4, 1)
+        selectedPerkIds = selectedPerkIds.concat(selectedPerksBis);
+         
         return {
             name,
             primaryStyleId: primaryPerkIds[0],
@@ -119,6 +127,7 @@ function extractRunes(champion, position, callback) {
 }
 
 function _getUrl(champion, role, type) {
+  //  main.log(url + type + '/' + champion + '/' + role);
     return url + type + '/' + champion + '/' + role;
 }
 
@@ -150,34 +159,72 @@ function getMainRole(champion) {
         request.get(roleUrl, (error, response, html) => {
             if (!error && response.statusCode === 200) {
                 let role =  parseRolePage(cheerio.load(html))
-                console.log('Main Role', role)
+               // main.log(champion + ' -> Main Role = '+ role)
                 resolve(role);      
             }
         });
     })    
 }
 
+
+async function _getAllLoadouts(champs, p_map, s_map, u_map){
+    main.log('DEBUT PRELOAD');
+    const roles = ['middle', 'jungle', 'top', 'adc', 'support'];    
+    for (let i = 0; i < champs.length; i++) {
+        let role;            
+        let page;
+        let summ;
+        
+        let champion = champs[i].toLowerCase().replace(/\s/g, '');
+
+        if (config.get('preload') == 1) {
+            await getMainRole(champion).then(result => role = result);  
+            await _getRunes(champion, role).then(result => page = result);
+            await _getSpells(champion, role).then(result => summ = result);
+            let graphUrl = _getUrl(champion, role, 'overview');
+
+            let key = champion+';'+role;
+            p_map.set(key, page);
+            s_map.set(key, summ);
+            u_map.set(key, graphUrl);
+        } else {
+            for (let j = 0; j < roles.length; j++) {
+                role = roles[j];
+                await _getRunes(champion, role).then(result => page = result);
+                await _getSpells(champion, role).then(result => summ = result);
+                let graphUrl = _getUrl(champion, role, 'overview');
+
+                let key = champion+';'+role;
+                p_map.set(key, page);
+                s_map.set(key, summ);
+                u_map.set(key, graphUrl); 
+            }
+        }
+        
+        
+    }
+    main.log('PRELOAD DONE')
+}
+
 async function _getLoadout(champion, role, callback) {
     let t_role = role;
     
     if (t_role == '') await getMainRole(champion).then(main_role => t_role = main_role);
-    
-    //de base pour l'aram on descend a silver pour pas se baser sur 3 games..
-    if (role == 'aram') t_role = 'silver/'+ role; 
 
     let graphUrl      = _getUrl(champion, t_role, 'overview');    
     let promiseRunes  = _getRunes(champion, t_role);
     let promiseSpells = _getSpells(champion, t_role);
-
+    
+    main.log('En attente de lolgraphs..');
     Promise.all([promiseRunes, promiseSpells]).then(async results => {
+        main.log('Resultats de lolgraphs');
         let page = results[0];
         let summ = results[1];
         
         //Parfois on ne trouve pas de page, dans ce cas on descend dans les abimes du fer
         if (!page) {
-            console.log('Pas de page, nouvelle recherche');
-            if (role == 'aram') t_role = 'iron/'+ role
-            else t_role = role + '/iron';
+            main.log('Pas de page, nouvelle recherche');            
+            t_role = role + '/iron';
 
             graphUrl      = _getUrl(champion, t_role, 'overview');    
             promiseRunes  = _getRunes(champion, t_role);
@@ -189,11 +236,8 @@ async function _getLoadout(champion, role, callback) {
             })
         } 
         
-        if (summ.length == 0) {
-            //Si on trouve pas de summoners...
-            if (role == 'aram') summ = [32, 4] //Snowball
-            else summ = [14, 4]
-        }
+        //Si on trouve pas de summoners -> Ignite/Flash
+        if (summ.length == 0) summ = [14, 4]; 
 
         callback({
             new_url : graphUrl,
@@ -203,4 +247,4 @@ async function _getLoadout(champion, role, callback) {
     })
 }
 
-module.exports = { _getLoadout, getMainRole};
+module.exports = { _getLoadout, getMainRole, _getAllLoadouts};

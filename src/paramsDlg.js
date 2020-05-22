@@ -14,6 +14,15 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('none').checked = true;   
     }
 
+    switch (config.get('preload')) {
+        case 0 : document.getElementById('norole').checked = true;
+                 break;
+        case 1 : document.getElementById('mainrole').checked = true;
+                 break;
+        case 2 : document.getElementById('allroles').checked = true;
+                 break;
+    }
+
     document.getElementById('autolaunch').checked = config.get('autoLaunch');
     document.getElementById('saveLogs').checked = config.get('saveLogs');
 
@@ -53,6 +62,14 @@ document.getElementById("valid-btn").addEventListener("click", function (e) {
     } else {
         config.set('NoRoleSoMid', false);
         config.set('bShowRoleDlg', false);  
+    }
+
+    if (document.getElementById('allroles').checked) {
+        config.set('preload', 2);
+    } else if (document.getElementById('mainrole').checked) {
+        config.set('preload', 1);
+    } else {
+        config.set('preload', 0);
     }
 
     config.set('guideTime', document.getElementById('guideRange').value); 

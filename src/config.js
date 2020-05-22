@@ -18,7 +18,8 @@ config = new Store({
         lobbyTime : 30,
         procTime  : 9,
         roleTime  : 10,
-        autoLaunch : false 
+        autoLaunch : false,
+        preload : 0
     }
 });
 
