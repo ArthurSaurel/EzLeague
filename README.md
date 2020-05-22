@@ -4,7 +4,7 @@
 
 *Se simplifier League of Legends*
 
-&#x1F536; [Télécharger l'installeur](https://github.com/ArthurSaurel/EzLeague/releases/tag/v3.2) &#x1F536;
+&#x1F536; [Télécharger l'installeur](https://github.com/ArthurSaurel/EzLeague/releases/tag/v3.3) &#x1F536;
 
 Ce logiciel a pour objectif d'automatiser certaines tâches et permettre de se concentrer sur les éléments qui nous intéressent vraiment. 
 
