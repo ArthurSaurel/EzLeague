@@ -107,17 +107,19 @@ function extractRunesFromElement($, champion, position){
 }
 
 function parseRunesPage($, champion, position) {
-    selector  = "table[class='data_table perksTable'] "    
-    
-    return $(selector)
+    selector = "table[class='perksTableContainerTable']";
+
+    result = $(selector)
           .toArray()
           .map(extractRunesFromElement($, champion, position))
-          .shift()
+          .shift();
+    
+    return result;
 }
 
 function extractRunes(champion, position, callback) {
     const runesUrl = _getUrl(champion, position, 'runes');
-
+    
     request.get(runesUrl, (error, response, html) => {
         if (!error && response.statusCode === 200) {
             page = parseRunesPage(cheerio.load(html), champion, position);
@@ -127,7 +129,6 @@ function extractRunes(champion, position, callback) {
 }
 
 function _getUrl(champion, role, type) {
-  //  main.log(url + type + '/' + champion + '/' + role);
     return url + type + '/' + champion + '/' + role;
 }
 
@@ -153,7 +154,7 @@ function parseRolePage($) {
 }
 
 function getMainRole(champion) {
-    const roleUrl = _getUrl(champion, '', 'overview');
+    const roleUrl = _getUrl(champion, '', 'builds');
     
     return new Promise(resolve => {
         request.get(roleUrl, (error, response, html) => {
@@ -181,7 +182,7 @@ async function _getAllLoadouts(champs, p_map, s_map, u_map){
             await getMainRole(champion).then(result => role = result);  
             await _getRunes(champion, role).then(result => page = result);
             await _getSpells(champion, role).then(result => summ = result);
-            let graphUrl = _getUrl(champion, role, 'overview');
+            let graphUrl = _getUrl(champion, role, 'builds');
 
             let key = champion+';'+role;
             p_map.set(key, page);
@@ -192,7 +193,7 @@ async function _getAllLoadouts(champs, p_map, s_map, u_map){
                 role = roles[j];
                 await _getRunes(champion, role).then(result => page = result);
                 await _getSpells(champion, role).then(result => summ = result);
-                let graphUrl = _getUrl(champion, role, 'overview');
+                let graphUrl = _getUrl(champion, role, 'builds');
 
                 let key = champion+';'+role;
                 p_map.set(key, page);
@@ -200,8 +201,6 @@ async function _getAllLoadouts(champs, p_map, s_map, u_map){
                 u_map.set(key, graphUrl); 
             }
         }
-        
-        
     }
     main.log('PRELOAD DONE')
 }
@@ -211,7 +210,7 @@ async function _getLoadout(champion, role, callback) {
     
     if (t_role == '') await getMainRole(champion).then(main_role => t_role = main_role);
 
-    let graphUrl      = _getUrl(champion, t_role, 'overview');    
+    let graphUrl      = _getUrl(champion, t_role, 'builds');    
     let promiseRunes  = _getRunes(champion, t_role);
     let promiseSpells = _getSpells(champion, t_role);
     
@@ -226,7 +225,7 @@ async function _getLoadout(champion, role, callback) {
             main.log('Pas de page, nouvelle recherche');            
             t_role = role + '/iron';
 
-            graphUrl      = _getUrl(champion, t_role, 'overview');    
+            graphUrl      = _getUrl(champion, t_role, 'builds');    
             promiseRunes  = _getRunes(champion, t_role);
             promiseSpells = _getSpells(champion, t_role);
 
