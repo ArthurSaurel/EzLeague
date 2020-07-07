@@ -26,7 +26,7 @@
     "chokidar": "^3.0.0",
     "csv-parser": "^2.2.0",
     "ddragon-api": "^1.0.3",
-    "electron": "^4.0.4",
+    "electron": "^7.2.4",
     "electron-installer-windows": "^1.1.0",
     "electron-log": "^3.0.5",
     "electron-notify": "^0.1.0",
