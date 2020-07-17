@@ -36,7 +36,7 @@
     "electron-winstaller": "^2.7.0",
     "is-running": "^2.1.0",
     "lcu-connector": "^2.1.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "lol-lockfile-parser": "^1.0.2",
     "net-ping": "^1.2.3",
     "node-gyp": "^4.0.0",
